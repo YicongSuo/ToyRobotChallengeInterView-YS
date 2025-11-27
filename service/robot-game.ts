@@ -88,7 +88,6 @@ export class RobotGame {
 
   // function 2: moving function based on current direction
   public move(steps: number = 1): OperationResult {
-    console.log('hasInit', this.hasInit)
     if(this.hasInit === false){
       const message = `❌ robot has not initialized yet`;
       console.log(message);
@@ -151,10 +150,10 @@ export class RobotGame {
       return null;
     }
     const reportInfo = `${this.robot.x}, ${this.robot.y}, ${this.robot.direction.toUpperCase()}`
-    console.log('\n' + '='.repeat(40));
+    console.log('\n' + '*'.repeat(50));
     console.log('Robot position report:');
     console.log(`Output: ${reportInfo}`);
-    console.log('='.repeat(40) + '\n');
+    console.log('*'.repeat(50) + '\n');
     
     appendToFile(reportInfo)
     // commend this line if report will not end the game
@@ -167,7 +166,7 @@ export class RobotGame {
   // display map
   public displayMap(mapSize: number): void {
     console.log(`\nGame Map (${mapSize}x${mapSize}):`);
-    console.log('   ' + '─'.repeat(42));
+    console.log('   ' + '─'.repeat(50));
 
     for (let y = this.bounds.maxY; y >= this.bounds.minY; y--) {
       let row = `${y >= 0 ? ' ' : ''}${y} │ `;
@@ -186,7 +185,7 @@ export class RobotGame {
       console.log(row);
     }
 
-    console.log('   ' + '─'.repeat(42));
+    console.log('   ' + '─'.repeat(50));
     process.stdout.write('     ');
     for(let i=0; i <= mapSize; i++){
       const printNumber = this.bounds.minX + i

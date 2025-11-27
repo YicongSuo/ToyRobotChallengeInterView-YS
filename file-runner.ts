@@ -27,10 +27,10 @@ export class FileRunner {
       
       console.log('command file executor');
       console.log(`read file: ${path.basename(filePath)}`);
-      console.log('='.repeat(50));
+      console.log('*'.repeat(50));
       console.log('file content:');
       console.log(content);
-      console.log('='.repeat(50));
+      console.log('*'.repeat(50));
 
       // create game instance
       const mapSize = 5;

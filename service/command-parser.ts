@@ -133,21 +133,19 @@ export class CommandParser {
     let executedCount = 0;
 
     console.log('Start execute...\n');
-    console.log('='.repeat(50));
+    console.log('*'.repeat(50));
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
       const command = this.parseLine(line);
 
       if (command) {
-        console.log(`\nexecute command ${i + 1}: ${line}`);
-        console.log('─'.repeat(50));
         this.executeCommand(command, game);
         executedCount++;
       }
     }
 
-    console.log('\n' + '='.repeat(50));
+    console.log('\n' + '*'.repeat(50));
     console.log(`✅ command finished！we finished ${executedCount} commands in total\n`);
   }
 }

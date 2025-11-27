@@ -2,11 +2,13 @@
 PLACE,0,0,NORTH
 MOVE
 REPORT
+DISPLAY
 
 # sample 2
 PLACE,0,0,NORTH
 LEFT
 REPORT
+DISPLAY
 
 # sample 3
 PLACE,1,2,EAST
@@ -15,15 +17,17 @@ MOVE
 LEFT
 MOVE
 REPORT
+DISPLAY
 
-# sample 4
+# cannot move out sample
 PLACE,0,0,NORTH
 MOVE
 LEFT
 MOVE,2
 REPORT
+DISPLAY
 
-# my personal sample
+# cannot move out sample 2
 # init
 PLACE,0,0,NORTH
 MOVE
