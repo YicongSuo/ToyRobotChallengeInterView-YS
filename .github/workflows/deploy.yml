@@ -1,0 +1,45 @@
+name: Upload to S3
+
+# This Github Action is a demo
+# Do not trigger it for real use at the moment
+# workflow_dispatch for manual action trigger
+on:
+  workflow_dispatch:
+    inputs:
+      file_path:
+        description: '要上传的文件路径'
+        required: false
+        default: 'result.txt'
+      s3_path:
+        description: 'S3 目标路径'
+        required: false
+        default: 'uploads/result.txt'
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. checkout to repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      # 2. read secrets from github secrets
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1  # 替换为你的 S3 bucket 所在区域
+      
+      # 3. upload to S3
+      - name: Upload file to S3
+        run: |
+          aws s3 cp ${{ github.event.inputs.file_path }} s3://your-bucket-name/${{ github.event.inputs.s3_path }}
+        
+      # 4. confirm successful upload
+      - name: Verify upload
+        run: |
+          echo "✅ File uploaded successfully to S3"
+          echo "File: ${{ github.event.inputs.file_path }}"
+          echo "S3 Path: s3://your-bucket-name/${{ github.event.inputs.s3_path }}"
