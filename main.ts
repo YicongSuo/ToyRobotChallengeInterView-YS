@@ -1,5 +1,5 @@
-// main.ts
-import { RobotGame } from './utils/robot-game';
+// service
+import { RobotGame } from './service/robot-game';
 
 // Constants
 import { directionConstant } from './constants/constants'

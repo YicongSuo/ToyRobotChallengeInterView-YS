@@ -3,8 +3,8 @@ import * as readline from 'node:readline/promises';
 import { stdin as input, stdout as output } from 'node:process';
 
 // Utils
-import { CommandParser } from './command-parser';
-import RobotGame from './robot-game';
+import { CommandParser } from '../service/command-parser';
+import RobotGame from '../service/robot-game';
 
 export default async function interactivePrompt(game:RobotGame) {
   const rl = readline.createInterface({ input, output });

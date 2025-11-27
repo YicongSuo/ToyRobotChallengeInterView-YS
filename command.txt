@@ -16,6 +16,13 @@ LEFT
 MOVE
 REPORT
 
+# sample 4
+PLACE,0,0,NORTH
+MOVE
+LEFT
+MOVE,2
+REPORT
+
 # my personal sample
 # init
 PLACE,0,0,NORTH

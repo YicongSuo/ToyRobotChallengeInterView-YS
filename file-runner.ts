@@ -3,8 +3,10 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // Utils
-import { RobotGame } from './utils/robot-game';
-import { CommandParser } from './utils/command-parser';
+import { CommandParser } from './service/command-parser';
+
+// service
+import { RobotGame } from './service/robot-game';
 
 // Constants
 import { directionConstant } from './constants/constants';
@@ -40,10 +42,6 @@ export class FileRunner {
 
       // parse and execute the command line by line
       CommandParser.parseAndExecute(content, game);
-
-      // display final status
-      console.log('Final status:');
-      game.displayMap(mapSize);
       
     } catch (error) {
       console.error('❌ execute error:', error);

@@ -29,7 +29,7 @@
   },
   "include": [
     "*.ts"
-, "file-runner.ts", "utils/readline.ts", "utils/robot-game.ts", "types/types.ts", "constants/constants.ts", "utils/command-parser.ts"  ],
+, "file-runner.ts", "utils/readline.ts", "service/robot-game.ts", "types/types.ts", "constants/constants.ts", "service/command-parser.ts"  ],
   "exclude": [
     "node_modules",
     "dist"

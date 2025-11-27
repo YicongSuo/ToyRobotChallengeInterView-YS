@@ -14,7 +14,7 @@ import type {
 import { directionConstant, turnDirectionConstantType } from '../constants/constants'
 
 // Utils
-import { appendToFile } from './writeFile'
+import { appendToFile } from '../utils/writeFile'
 
 
 // robotPositionGame
